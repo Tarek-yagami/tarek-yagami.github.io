@@ -81,7 +81,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "InkMap",
-    period: "2026",
+    period: "Sep 2026",
     description:
       "Turns a research paper into an interactive knowledge graph you can explore instead of reading linearly.",
     tags: ["FastAPI", "React", "LLMs"],
@@ -89,7 +89,7 @@ export const projects: Project[] = [
   },
   {
     title: "Codebase Knowledge Graph",
-    period: "2026",
+    period: "Aug 2026",
     description:
       "Turns a codebase into an explorable 3D knowledge graph and an MCP server Claude Code can query directly — with two honestly-reported experiments testing whether structure actually improves answers or just cuts cost.",
     tags: ["MCP", "Python", "Graph"],
@@ -97,7 +97,7 @@ export const projects: Project[] = [
   },
   {
     title: "Retrieval Ablation",
-    period: "2026",
+    period: "Sep 2026",
     description:
       "Tests the 'hybrid retrieval + reranking is always the safer default' consensus against real relevance judgments on three BEIR datasets — finds it doesn't hold on two of three, and that reranking's quality gain comes bundled with a 150-1400x latency cost.",
     tags: ["RAG", "Evaluation", "BEIR"],
@@ -106,7 +106,7 @@ export const projects: Project[] = [
   },
   {
     title: "Algeria Solar & Wind Potential",
-    period: "2026",
+    period: "Aug 2026",
     description:
       "A data-driven study of where Algeria should build solar and wind capacity, based on 20 years of NASA climate data, with an interactive dashboard to explore the results.",
     tags: ["Data Science", "NASA POWER", "Dashboard"],
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     description:
       "Adversarial attacks targeting Wav2Vec2, ResNet-18, and YOLOv8 using Projected Gradient Descent and psychoacoustic masking, to evaluate model robustness.",
     tags: ["PGD", "Robustness", "Audio & Vision"],
-    link: "https://github.com/Tarek-yagami/Adversarial-ASR-Attack",
+    link: "https://github.com/Tarek-yagami/Adversarial-Attacks-Speech-Vision",
   },
 ];
 
