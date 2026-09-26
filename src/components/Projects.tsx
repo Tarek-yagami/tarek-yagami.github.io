@@ -9,10 +9,7 @@ function CardBody({ project }: { project: Project }) {
     <>
       <span className="pin" aria-hidden />
       <p className="label">{project.period}</p>
-      <h3 className="font-display text-lg font-semibold mt-1 mb-2">
-        {project.title}
-        {project.link && <span className="text-[color:var(--pin)]"> ↗</span>}
-      </h3>
+      <h3 className="font-display text-lg font-semibold mt-1 mb-2">{project.title}</h3>
       <p className="text-sm leading-relaxed flex-1">{project.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
@@ -24,6 +21,30 @@ function CardBody({ project }: { project: Project }) {
           </span>
         ))}
       </div>
+      {(project.link || project.demo) && (
+        <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-sm">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="ink-link"
+            >
+              GitHub ↗
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="ink-link"
+            >
+              Live demo ↗
+            </a>
+          )}
+        </div>
+      )}
     </>
   );
 }
@@ -36,20 +57,9 @@ export function Projects() {
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (
           <Reveal key={project.title} rotate={rotations[i % rotations.length]} delay={i * 70}>
-            {project.link ? (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="card p-6 pt-8 h-full flex flex-col"
-              >
-                <CardBody project={project} />
-              </a>
-            ) : (
-              <div className="card p-6 pt-8 h-full flex flex-col">
-                <CardBody project={project} />
-              </div>
-            )}
+            <div className="card p-6 pt-8 h-full flex flex-col">
+              <CardBody project={project} />
+            </div>
           </Reveal>
         ))}
       </div>

@@ -75,6 +75,7 @@ export type Project = {
   description: string;
   tags: string[];
   link?: string;
+  demo?: string;
 };
 
 export const projects: Project[] = [
@@ -87,12 +88,21 @@ export const projects: Project[] = [
     link: "https://github.com/Tarek-yagami/InkMap",
   },
   {
-    title: "codebase-knowledge-graph",
+    title: "Codebase Knowledge Graph",
     period: "2026",
     description:
       "Turns a codebase into an explorable 3D knowledge graph and an MCP server Claude Code can query directly — with two honestly-reported experiments testing whether structure actually improves answers or just cuts cost.",
     tags: ["MCP", "Python", "Graph"],
     link: "https://github.com/Tarek-yagami/codebase-knowledge-graph",
+  },
+  {
+    title: "Retrieval Ablation",
+    period: "2026",
+    description:
+      "Tests the 'hybrid retrieval + reranking is always the safer default' consensus against real relevance judgments on three BEIR datasets — finds it doesn't hold on two of three, and that reranking's quality gain comes bundled with a 150-1400x latency cost.",
+    tags: ["RAG", "Evaluation", "BEIR"],
+    link: "https://github.com/Tarek-yagami/Retrieval-ablation",
+    demo: "https://retrieval-ablation.streamlit.app/",
   },
   {
     title: "Algeria Solar & Wind Potential",
@@ -106,22 +116,25 @@ export const projects: Project[] = [
     title: "Indexia",
     period: "May 2025",
     description:
-      "Multichannel intelligent indexing solution supporting text, image, and voice input — semantic indexing, keyword recommendation, and automatic document classification.",
+      "Multichannel intelligent indexing solution supporting text, image, and voice input — semantic indexing, keyword recommendation, and automatic document classification. Group project.",
     tags: ["Semantic Search", "Multimodal"],
+    link: "https://github.com/The-soulless12/IndexIA",
   },
   {
     title: "Shelf Analysis for Ramy",
     period: "Feb 2025",
     description:
-      "YOLO-based real-time shelf-detection system enabling automated shelf-share analysis and competitor benchmarking.",
+      "YOLO-based real-time shelf-detection system enabling automated shelf-share analysis and competitor benchmarking. Group project.",
     tags: ["YOLO", "Computer Vision"],
+    link: "https://github.com/kaouthar-lefkir/AUP-2025",
   },
   {
-    title: "Adversarial Attacks on AI Models",
+    title: "Adversarial Attacks on Speech & Vision Models",
     period: "Jan — Mar 2025",
     description:
       "Adversarial attacks targeting Wav2Vec2, ResNet-18, and YOLOv8 using Projected Gradient Descent and psychoacoustic masking, to evaluate model robustness.",
     tags: ["PGD", "Robustness", "Audio & Vision"],
+    link: "https://github.com/Tarek-yagami/Adversarial-ASR-Attack",
   },
 ];
 
@@ -153,5 +166,9 @@ export const skills: { category: string; items: string[] }[] = [
   {
     category: "MLOps & Cloud",
     items: ["AWS", "Docker", "CI/CD", "Git"],
+  },
+  {
+    category: "Frontend & Mobile",
+    items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Flutter"],
   },
 ];
