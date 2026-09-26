@@ -11,7 +11,6 @@ export function Skills() {
         {skills.map((group, i) => (
           <Reveal key={group.category} rotate={i % 2 === 0 ? -0.5 : 0.75} delay={i * 60} className="h-full">
             <div className="card p-6 pt-8 h-full">
-              <span className="pin" aria-hidden />
               <h3 className="label mb-4">{group.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {group.items.map((item) => (

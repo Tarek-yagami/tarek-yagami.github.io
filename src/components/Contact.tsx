@@ -6,7 +6,6 @@ export function Contact() {
     <section id="contact" className="px-6 sm:px-10 py-20 max-w-5xl mx-auto scroll-mt-20">
       <Reveal rotate={-0.5}>
         <div className="card p-10 sm:p-14 text-center">
-          <span className="pin" aria-hidden />
           <p className="label mb-4">04 — Closing statement</p>
           <h2 className="font-display italic text-3xl sm:text-4xl font-semibold mb-6">
             Let&apos;s build something worth citing.

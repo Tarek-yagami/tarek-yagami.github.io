@@ -7,7 +7,6 @@ const rotations = [1, -1.5, 0.5, -1, 1.5, -0.5];
 function CardBody({ project }: { project: Project }) {
   return (
     <>
-      <span className="pin" aria-hidden />
       <p className="label">{project.period}</p>
       <h3 className="font-display text-lg font-semibold mt-1 mb-2">
         {project.title}

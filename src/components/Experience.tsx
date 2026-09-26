@@ -18,7 +18,6 @@ export function Experience() {
             className="break-inside-avoid mb-8"
           >
             <article className="card p-6 pt-8">
-              <span className="pin" aria-hidden />
               <p className="label">{job.period}</p>
               <h3 className="font-display text-xl font-semibold mt-1">{job.role}</h3>
               <p className="text-[color:var(--ink-soft)] text-sm mb-4">{job.org}</p>
@@ -42,7 +41,6 @@ export function Experience() {
       <div className="mt-6 max-w-md">
         <Reveal rotate={0.75} delay={experience.length * 80}>
           <article className="card p-6 pt-8">
-            <span className="pin" aria-hidden />
             <p className="label">{education.period}</p>
             <h3 className="font-display text-xl font-semibold mt-1">{education.degree}</h3>
             <p className="text-[color:var(--ink-soft)] text-sm">{education.school}</p>

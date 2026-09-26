@@ -170,7 +170,8 @@ body {
     0 6px 14px -4px color-mix(in srgb, var(--card-shadow) 65%, black);
 }
 
-.pin {
+.card::before {
+  content: "";
   position: absolute;
   top: -9px;
   left: 50%;
