@@ -86,6 +86,7 @@ export const projects: Project[] = [
       "Turns a research paper into an interactive knowledge graph you can explore instead of reading linearly.",
     tags: ["FastAPI", "React", "LLMs"],
     link: "https://github.com/Tarek-yagami/InkMap",
+    demo: "https://inkmap.onrender.com",
   },
   {
     title: "Codebase Knowledge Graph",
@@ -94,6 +95,7 @@ export const projects: Project[] = [
       "Turns a codebase into an explorable 3D knowledge graph and an MCP server Claude Code can query directly — with two honestly-reported experiments testing whether structure actually improves answers or just cuts cost.",
     tags: ["MCP", "Python", "Graph"],
     link: "https://github.com/Tarek-yagami/codebase-knowledge-graph",
+    demo: "https://tarek-yagami.github.io/codebase-knowledge-graph/",
   },
   {
     title: "Retrieval Ablation",
@@ -111,6 +113,7 @@ export const projects: Project[] = [
       "A data-driven study of where Algeria should build solar and wind capacity, based on 20 years of NASA climate data, with an interactive dashboard to explore the results.",
     tags: ["Data Science", "NASA POWER", "Dashboard"],
     link: "https://github.com/Tarek-yagami/algeria-solar-wind-potential",
+    demo: "https://algeria-solar-wind-potential.streamlit.app/",
   },
   {
     title: "Indexia",
