@@ -1,10 +1,10 @@
 import { profile } from "@/lib/data";
-import { MagnifierAccent } from "@/components/MagnifierAccent";
+import { DetectiveSilhouette } from "@/components/DetectiveSilhouette";
 
 export function Hero() {
   return (
     <header className="relative px-6 sm:px-10 pt-20 pb-20 sm:pt-28 sm:pb-28 max-w-5xl mx-auto overflow-hidden">
-      <MagnifierAccent />
+      <DetectiveSilhouette />
 
       <p
         className="label-on-board mb-6 rise-in"
