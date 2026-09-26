@@ -1,10 +1,10 @@
 import { profile } from "@/lib/data";
-import { StringAccent } from "@/components/StringAccent";
+import { MagnifierAccent } from "@/components/MagnifierAccent";
 
 export function Hero() {
   return (
     <header className="relative px-6 sm:px-10 pt-20 pb-20 sm:pt-28 sm:pb-28 max-w-5xl mx-auto overflow-hidden">
-      <StringAccent />
+      <MagnifierAccent />
 
       <p
         className="label-on-board mb-6 rise-in"
