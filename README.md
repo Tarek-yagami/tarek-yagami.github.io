@@ -1,6 +1,6 @@
 # Portfolio
 
-Tarek Benameur's portfolio site — Next.js (static export), TypeScript, Tailwind CSS.
+Tarek Benameur's portfolio site. Next.js (static export), TypeScript, Tailwind CSS.
 
 ## Development
 

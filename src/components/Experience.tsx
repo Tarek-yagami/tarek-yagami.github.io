@@ -7,7 +7,7 @@ const rotations = [-1.5, 1, -1, 1.5, -0.5];
 export function Experience() {
   return (
     <section id="experience" className="px-6 sm:px-10 py-16 max-w-5xl mx-auto scroll-mt-20">
-      <SectionHeading index="01 — Record" title="Experience" />
+      <SectionHeading index="01 · Record" title="Experience" />
 
       <div className="sm:columns-2 gap-8">
         {experience.map((job, i) => (
@@ -23,7 +23,7 @@ export function Experience() {
               <p className="text-[color:var(--ink-soft)] text-sm mb-4">{job.org}</p>
               <ul className="space-y-2 text-sm leading-relaxed">
                 {job.bullets.map((b) => (
-                  <li key={b} className="pl-4 relative before:content-['—'] before:absolute before:left-0 before:text-[color:var(--pin)]">
+                  <li key={b} className="pl-4 relative before:content-['-'] before:absolute before:left-0 before:text-[color:var(--pin)]">
                     {b}
                   </li>
                 ))}

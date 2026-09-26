@@ -5,7 +5,7 @@ import { skills } from "@/lib/data";
 export function Skills() {
   return (
     <section id="skills" className="px-6 sm:px-10 py-16 max-w-5xl mx-auto scroll-mt-20">
-      <SectionHeading index="03 — Inventory" title="Skills" />
+      <SectionHeading index="03 · Inventory" title="Skills" />
 
       <div className="grid gap-6 sm:grid-cols-2">
         {skills.map((group, i) => (

@@ -30,7 +30,7 @@ function CardBody({ project }: { project: Project }) {
 export function Projects() {
   return (
     <section id="projects" className="px-6 sm:px-10 py-16 max-w-5xl mx-auto scroll-mt-20">
-      <SectionHeading index="02 — Evidence" title="Projects" />
+      <SectionHeading index="02 · Evidence" title="Projects" />
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, i) => (

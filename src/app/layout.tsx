@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tarek Benameur — AI Engineer",
+  title: "Tarek Benameur · AI Engineer",
   description:
     "AI Engineer building production LLM and RAG systems. Case file / portfolio of Tarek Benameur.",
 };

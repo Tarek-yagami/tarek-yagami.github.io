@@ -10,7 +10,7 @@ export function Hero() {
         className="label-on-board mb-6 rise-in"
         style={{ animationDelay: "0.05s" }}
       >
-        Case file — AI Engineering &amp; RAG Systems
+        Case file · AI Engineering &amp; RAG Systems
       </p>
 
       <h1

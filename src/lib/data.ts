@@ -20,7 +20,7 @@ export const experience: Experience[] = [
   {
     role: "AI Engineer",
     org: "DIDATA",
-    period: "Jul 2026 — Present",
+    period: "Jul 2026 - Present",
     bullets: [
       "Designing and maintaining LLM-based agents and RAG workflows across the LIMS platform, with expanding scope.",
       "Collaborating with cross-functional teams to extend and support the AI systems delivered during the internship.",
@@ -29,7 +29,7 @@ export const experience: Experience[] = [
   {
     role: "AI Engineering Intern",
     org: "DIDATA",
-    period: "Oct 2025 — Jun 2026",
+    period: "Oct 2025 - Jun 2026",
     bullets: [
       "Developed an AI system that transforms natural language queries into structured outputs for a business LIMS platform, including a custom evaluation framework to measure output correctness.",
       "Built an agent-based assistant for automated code generation, retrieving relevant context from internal documentation.",
@@ -37,9 +37,9 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "AI Intern — Final Year Project",
+    role: "AI Intern - Final Year Project",
     org: "Vacutube",
-    period: "Oct 2025 — Jun 2026",
+    period: "Oct 2025 - Jun 2026",
     bullets: [
       "Built a documentation-driven, agentic architecture using the Model Context Protocol (MCP), with a hybrid retrieval pipeline for system context.",
       "Implemented a validation layer combining automated checks and LLM-based evaluation to assess generated code against requirements.",
@@ -48,7 +48,7 @@ export const experience: Experience[] = [
   {
     role: "Deep Learning Intern",
     org: "CERIST",
-    period: "Jul 2024 — Aug 2024",
+    period: "Jul 2024 - Aug 2024",
     bullets: [
       "Developed deep learning models for brain tumor classification from MRI scans using PyTorch, including preprocessing, augmentation, training, and evaluation.",
     ],
@@ -56,7 +56,7 @@ export const experience: Experience[] = [
   {
     role: "Machine Learning Intern",
     org: "CERIST",
-    period: "Jul 2023 — Aug 2023",
+    period: "Jul 2023 - Aug 2023",
     bullets: [
       "Developed and evaluated machine learning models for sentiment analysis using NLP techniques, feature engineering, and performance optimization.",
     ],
@@ -66,7 +66,7 @@ export const experience: Experience[] = [
 export const education = {
   school: "National Higher School of Computer Science (ESI), Algiers",
   degree: "State Engineer Degree & Master's Degree in Computer Science",
-  period: "Sep 2021 — Jun 2026",
+  period: "Sep 2021 - Jun 2026",
 };
 
 export type Project = {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     title: "Retrieval Ablation",
     period: "Sep 2026",
     description:
-      "Tests the 'hybrid retrieval + reranking is always the safer default' consensus against real relevance judgments on three BEIR datasets — finds it doesn't hold on two of three, and that reranking's quality gain comes bundled with a 150-1400x latency cost.",
+      "Tests the 'hybrid retrieval + reranking is always the safer default' consensus against real relevance judgments on three BEIR datasets. It doesn't hold on two of three, and reranking's quality gain comes bundled with a 150-1400x latency cost.",
     tags: ["RAG", "Evaluation", "BEIR"],
     link: "https://github.com/Tarek-yagami/Retrieval-ablation",
   },
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     title: "Codebase Knowledge Graph",
     period: "Aug 2026",
     description:
-      "Turns a codebase into an explorable 3D knowledge graph and an MCP server Claude Code can query directly — with two honestly-reported experiments testing whether structure actually improves answers or just cuts cost.",
+      "Turns a codebase into an explorable 3D knowledge graph and an MCP server Claude Code can query directly, with two honestly-reported experiments testing whether structure actually improves answers or just cuts cost.",
     tags: ["MCP", "Python", "Graph"],
     link: "https://github.com/Tarek-yagami/codebase-knowledge-graph",
   },
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     title: "Indexia",
     period: "May 2025",
     description:
-      "Multichannel intelligent indexing solution supporting text, image, and voice input — semantic indexing, keyword recommendation, and automatic document classification. Group project.",
+      "Multichannel intelligent indexing solution supporting text, image, and voice input, with semantic indexing, keyword recommendation, and automatic document classification. Group project.",
     tags: ["Semantic Search", "Multimodal"],
     link: "https://github.com/The-soulless12/IndexIA",
   },
@@ -128,7 +128,7 @@ export const projects: Project[] = [
   },
   {
     title: "Adversarial Attacks on Speech & Vision Models",
-    period: "Jan — Mar 2025",
+    period: "Jan - Mar 2025",
     description:
       "Adversarial attacks targeting Wav2Vec2, ResNet-18, and YOLOv8 using Projected Gradient Descent and psychoacoustic masking, to evaluate model robustness.",
     tags: ["PGD", "Robustness", "Audio & Vision"],
