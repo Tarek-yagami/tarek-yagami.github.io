@@ -3,7 +3,7 @@ import { profile } from "@/lib/data";
 
 export function Contact() {
   return (
-    <section className="px-6 sm:px-10 py-20 max-w-5xl mx-auto">
+    <section id="contact" className="px-6 sm:px-10 py-20 max-w-5xl mx-auto scroll-mt-20">
       <Reveal rotate={-0.5}>
         <div className="card p-10 sm:p-14 text-center">
           <span className="pin" aria-hidden />
@@ -30,7 +30,7 @@ export function Contact() {
         </div>
       </Reveal>
 
-      <p className="label text-center mt-16 opacity-60">
+      <p className="label-on-board text-center mt-16 opacity-70">
         {profile.name} — filed {new Date().getFullYear()}
       </p>
     </section>

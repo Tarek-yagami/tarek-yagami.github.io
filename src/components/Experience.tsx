@@ -6,7 +6,7 @@ const rotations = [-1.5, 1, -1, 1.5, -0.5];
 
 export function Experience() {
   return (
-    <section className="px-6 sm:px-10 py-16 max-w-5xl mx-auto">
+    <section id="experience" className="px-6 sm:px-10 py-16 max-w-5xl mx-auto scroll-mt-20">
       <SectionHeading index="01 — Record" title="Experience" />
 
       <div className="grid gap-8 sm:grid-cols-2">
@@ -27,8 +27,15 @@ export function Experience() {
             </article>
           </Reveal>
         ))}
+      </div>
 
-        <Reveal rotate={1} delay={experience.length * 80}>
+      <div className="mt-14 flex items-center gap-3">
+        <span className="label-on-board">Education</span>
+        <span className="h-px flex-1 bg-[color:var(--on-board)]/15" />
+      </div>
+
+      <div className="mt-6 max-w-md">
+        <Reveal rotate={0.75} delay={experience.length * 80}>
           <article className="card p-6 pt-8">
             <span className="pin" aria-hidden />
             <p className="label">{education.period}</p>

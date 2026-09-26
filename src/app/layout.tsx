@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, JetBrains_Mono } from "next/font/google";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -22,13 +23,30 @@ export const metadata: Metadata = {
     "AI Engineer building production LLM and RAG systems. Case file / portfolio of Tarek Benameur.",
 };
 
+const themeInitScript = `
+(function () {
+  try {
+    var stored = window.localStorage.getItem("theme");
+    if (stored === "dark" || stored === "light") {
+      document.documentElement.setAttribute("data-theme", stored);
+    }
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${fraunces.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full board">{children}</body>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body className="min-h-full board" id="top">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

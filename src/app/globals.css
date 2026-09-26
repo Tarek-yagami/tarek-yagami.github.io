@@ -1,6 +1,46 @@
 @import "tailwindcss";
 
 :root {
+  --board: #ede1c8;
+  --board-deep: #e0d2ae;
+  --card: #fffdf7;
+  --card-shadow: #cabb95;
+  --ink: #241a12;
+  --ink-soft: #5e5140;
+  --ink-faint: #8a7c67;
+  --on-board: #241a12;
+  --on-board-soft: rgba(36, 26, 18, 0.72);
+  --on-board-faint: #6b5c46;
+  --pin: #b3402c;
+  --pin-dark: #7a2a1c;
+  --stamp: #2f6f62;
+  --nav-bg: rgba(237, 225, 200, 0.75);
+  --nav-border: rgba(36, 26, 18, 0.1);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --board: #241a14;
+    --board-deep: #180f0a;
+    --card: #f6efdd;
+    --card-shadow: #0f0906;
+    --ink: #211a12;
+    --ink-soft: #5e5140;
+    --ink-faint: #8a7c67;
+    --on-board: #f3ead9;
+    --on-board-soft: rgba(243, 234, 217, 0.72);
+    --on-board-faint: #a89a80;
+    --pin: #c9573d;
+    --pin-dark: #8a3624;
+    --stamp: #4d9382;
+    --nav-bg: rgba(24, 15, 10, 0.75);
+    --nav-border: rgba(243, 234, 217, 0.1);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
   --board: #241a14;
   --board-deep: #180f0a;
   --card: #f6efdd;
@@ -8,11 +48,15 @@
   --ink: #211a12;
   --ink-soft: #5e5140;
   --ink-faint: #8a7c67;
-  --pin: #b3402c;
-  --pin-dark: #7a2a1c;
-  --thread: #b3402c;
-  --stamp: #2f6f62;
-  --tape: #e8dcc0;
+  --on-board: #f3ead9;
+  --on-board-soft: rgba(243, 234, 217, 0.72);
+  --on-board-faint: #a89a80;
+  --pin: #c9573d;
+  --pin-dark: #8a3624;
+  --stamp: #4d9382;
+  --nav-bg: rgba(24, 15, 10, 0.75);
+  --nav-border: rgba(243, 234, 217, 0.1);
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -27,9 +71,9 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
 }
 
 body {
@@ -42,11 +86,12 @@ body {
 .board {
   position: relative;
   background:
-    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(179, 64, 44, 0.10), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 90% 10%, rgba(255, 220, 170, 0.05), transparent 60%),
-    repeating-radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.015) 0, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 3px),
+    radial-gradient(ellipse 80% 60% at 20% -10%, color-mix(in srgb, var(--pin) 10%, transparent), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 90% 10%, color-mix(in srgb, var(--on-board) 6%, transparent), transparent 60%),
+    repeating-radial-gradient(circle at 0 0, color-mix(in srgb, var(--on-board) 3%, transparent) 0, color-mix(in srgb, var(--on-board) 3%, transparent) 1px, transparent 1px, transparent 3px),
     linear-gradient(180deg, var(--board) 0%, var(--board-deep) 100%);
   background-color: var(--board);
+  transition: background-color 0.3s ease;
 }
 
 .board::before {
@@ -56,7 +101,7 @@ body {
   pointer-events: none;
   z-index: 50;
   mix-blend-mode: overlay;
-  opacity: 0.35;
+  opacity: 0.25;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
@@ -74,18 +119,26 @@ body {
   color: var(--ink-faint);
 }
 
+.label-on-board {
+  font-family: var(--font-body), ui-monospace, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  color: var(--on-board-faint);
+}
+
 .stamp {
   display: inline-block;
-  border: 1.5px solid currentColor;
+  background: var(--card);
+  border: 1.5px solid var(--ink);
   border-radius: 3px;
   padding: 0.15em 0.55em;
   font-family: var(--font-body), ui-monospace, monospace;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 11px;
-  color: var(--stamp);
-  transform: rotate(-2deg);
-  mix-blend-mode: multiply;
+  color: var(--ink);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 /* ---------- index card ---------- */
@@ -97,8 +150,8 @@ body {
   border-radius: 2px;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 18px 30px -14px rgba(15, 9, 6, 0.55),
-    0 4px 10px -4px rgba(15, 9, 6, 0.4);
+    0 18px 30px -14px color-mix(in srgb, var(--card-shadow) 70%, black),
+    0 4px 10px -4px color-mix(in srgb, var(--card-shadow) 60%, black);
   background-image:
     linear-gradient(var(--card), var(--card)),
     repeating-linear-gradient(
@@ -106,15 +159,15 @@ body {
       transparent 27px,
       rgba(94, 81, 64, 0.12) 28px
     );
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background-color 0.3s ease;
 }
 
 .card:hover {
   transform: rotate(0deg) scale(1.015) translateY(-2px) !important;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.4) inset,
-    0 26px 40px -16px rgba(15, 9, 6, 0.6),
-    0 6px 14px -4px rgba(15, 9, 6, 0.45);
+    0 26px 40px -16px color-mix(in srgb, var(--card-shadow) 75%, black),
+    0 6px 14px -4px color-mix(in srgb, var(--card-shadow) 65%, black);
 }
 
 .pin {
@@ -125,21 +178,58 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, #e2775f 0%, var(--pin) 45%, var(--pin-dark) 100%);
+  background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--pin) 60%, white) 0%, var(--pin) 45%, var(--pin-dark) 100%);
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.45), 0 0 0 2px rgba(255, 255, 255, 0.06);
   z-index: 2;
 }
 
-.tape {
-  position: absolute;
-  width: 64px;
-  height: 22px;
-  background: var(--tape);
-  opacity: 0.75;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+/* ---------- navbar ---------- */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--nav-bg);
+  backdrop-filter: blur(10px) saturate(1.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.1);
+  border-bottom: 1px solid var(--nav-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-/* ---------- reveal animation ---------- */
+.nav-link {
+  color: var(--on-board-soft);
+  text-decoration: none;
+  font-family: var(--font-body), ui-monospace, monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--pin);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--nav-border);
+  color: var(--on-board);
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--pin);
+  transform: rotate(-8deg);
+}
+
+/* ---------- reveal & entrance animation ---------- */
 
 .reveal {
   opacity: 0;
@@ -150,6 +240,21 @@ body {
 .reveal.in {
   opacity: 1;
   transform: translateY(0) rotate(var(--rot, 0deg)) scale(1);
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise-in {
+  animation: riseIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* ---------- misc ---------- */
@@ -166,15 +271,29 @@ body {
   color: var(--pin-dark);
 }
 
+.ink-link-inverse {
+  color: var(--on-board);
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--pin);
+  padding-bottom: 1px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.ink-link-inverse:hover {
+  opacity: 0.75;
+}
+
 ::selection {
   background: var(--pin);
   color: var(--card);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
+  .reveal,
+  .rise-in {
     opacity: 1;
     transform: none;
+    animation: none;
     transition: none;
   }
   .card {
