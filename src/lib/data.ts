@@ -75,10 +75,17 @@ export type Project = {
   description: string;
   tags: string[];
   link?: string;
-  demo?: string;
 };
 
 export const projects: Project[] = [
+  {
+    title: "Retrieval Ablation",
+    period: "Sep 2026",
+    description:
+      "Tests the 'hybrid retrieval + reranking is always the safer default' consensus against real relevance judgments on three BEIR datasets — finds it doesn't hold on two of three, and that reranking's quality gain comes bundled with a 150-1400x latency cost.",
+    tags: ["RAG", "Evaluation", "BEIR"],
+    link: "https://github.com/Tarek-yagami/Retrieval-ablation",
+  },
   {
     title: "InkMap",
     period: "Sep 2026",
@@ -86,7 +93,6 @@ export const projects: Project[] = [
       "Turns a research paper into an interactive knowledge graph you can explore instead of reading linearly.",
     tags: ["FastAPI", "React", "LLMs"],
     link: "https://github.com/Tarek-yagami/InkMap",
-    demo: "https://inkmap.onrender.com",
   },
   {
     title: "Codebase Knowledge Graph",
@@ -95,16 +101,6 @@ export const projects: Project[] = [
       "Turns a codebase into an explorable 3D knowledge graph and an MCP server Claude Code can query directly — with two honestly-reported experiments testing whether structure actually improves answers or just cuts cost.",
     tags: ["MCP", "Python", "Graph"],
     link: "https://github.com/Tarek-yagami/codebase-knowledge-graph",
-    demo: "https://tarek-yagami.github.io/codebase-knowledge-graph/",
-  },
-  {
-    title: "Retrieval Ablation",
-    period: "Sep 2026",
-    description:
-      "Tests the 'hybrid retrieval + reranking is always the safer default' consensus against real relevance judgments on three BEIR datasets — finds it doesn't hold on two of three, and that reranking's quality gain comes bundled with a 150-1400x latency cost.",
-    tags: ["RAG", "Evaluation", "BEIR"],
-    link: "https://github.com/Tarek-yagami/Retrieval-ablation",
-    demo: "https://retrieval-ablation.streamlit.app/",
   },
   {
     title: "Algeria Solar & Wind Potential",
@@ -113,7 +109,6 @@ export const projects: Project[] = [
       "A data-driven study of where Algeria should build solar and wind capacity, based on 20 years of NASA climate data, with an interactive dashboard to explore the results.",
     tags: ["Data Science", "NASA POWER", "Dashboard"],
     link: "https://github.com/Tarek-yagami/algeria-solar-wind-potential",
-    demo: "https://algeria-solar-wind-potential.streamlit.app/",
   },
   {
     title: "Indexia",
