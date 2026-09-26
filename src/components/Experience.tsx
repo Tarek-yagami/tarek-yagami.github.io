@@ -9,9 +9,14 @@ export function Experience() {
     <section id="experience" className="px-6 sm:px-10 py-16 max-w-5xl mx-auto scroll-mt-20">
       <SectionHeading index="01 — Record" title="Experience" />
 
-      <div className="grid gap-8 sm:grid-cols-2">
+      <div className="sm:columns-2 gap-8">
         {experience.map((job, i) => (
-          <Reveal key={job.role + job.org} rotate={rotations[i % rotations.length]} delay={i * 80}>
+          <Reveal
+            key={job.role + job.org}
+            rotate={rotations[i % rotations.length]}
+            delay={i * 80}
+            className="break-inside-avoid mb-8"
+          >
             <article className="card p-6 pt-8">
               <span className="pin" aria-hidden />
               <p className="label">{job.period}</p>
